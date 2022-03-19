@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Formularios</string>
+    <string name="persons">Ir a Personas</string>
+    <string name="cars">Ir a Carros</string>
+    <string name="person">Personas</string>
+</resources>
