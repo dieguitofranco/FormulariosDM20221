@@ -5,6 +5,7 @@ import static android.graphics.Color.BLACK;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.ColorMatrix;
 import android.os.Bundle;
@@ -12,6 +13,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.example.formularios.models.PersonasModel;
+
+import java.util.LinkedList;
+import java.util.List;
 
 public class MenuAplicacion extends AppCompatActivity implements View.OnClickListener {
 
@@ -24,7 +30,10 @@ public class MenuAplicacion extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_menu_aplicacion);
         setContentViewAttribute();
         setContentViewEvents();
-
+        SharedPreferences sp = getSharedPreferences("Aplicacion",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString("Nombre", "Diego");
+        editor.commit();
     }
 
     private void setContentViewEvents() {
@@ -54,7 +63,7 @@ public class MenuAplicacion extends AppCompatActivity implements View.OnClickLis
     }
 
     private void goToPeopleAction() {
-        Toast.makeText(this,"Diste clic en Personas", Toast.LENGTH_LONG).show();
+      //  Toast.makeText(this,"Diste clic en Personas", Toast.LENGTH_LONG).show();
         Intent intent = new Intent(MenuAplicacion.this,Personas.class);
         startActivity(intent);
 
